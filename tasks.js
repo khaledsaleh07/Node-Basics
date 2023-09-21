@@ -39,6 +39,8 @@ function onDataReceived(text) {
   }
   else if(text === 'hello\n'){
     hello();
+  } else if(text === 'help\n'){
+    help();
   }
   else{
     unknownCommand(text);
@@ -77,6 +79,11 @@ function quit(){
   console.log('Quitting now, goodbye!')
   process.exit();
 }
+// list all possible commands
+function help(){
+  console.log('help: display list of all commands \nexit or quit: exits the application \nhello: says hello!')
+}
+
 
 // The following line starts the application
 startApp("Khaled Saleh")
