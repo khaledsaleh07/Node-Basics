@@ -112,10 +112,9 @@ function help(){
 }
 
 let tasks=[
-  "buy bread",
-  "do the exercises"
-   ]
-
+  {task:"buy bread",done:false},
+  {task:"do the exercises",done:false},
+]
 
 /**
  * list the tasks
@@ -124,7 +123,7 @@ let tasks=[
  */
 function list() {
  for (let i=0;i<tasks.length;i++) {
-  console.log(`${i+1} - [ ] ${tasks[i]}`)
+  console.log(`${i+1} - [${tasks[i].done? "✓":" "}] ${tasks[i].task}`);
  }
 }
 
@@ -138,7 +137,8 @@ function add(text){
     console.log("error, please add a task")
   }
   else{
-    tasks.push(text.slice(4,text.length).trim());
+    tasks.push({task:text.slice(4,text.length).trim(),done:false});
+    console.log("Task aded succesfully");
   }
 }
 
