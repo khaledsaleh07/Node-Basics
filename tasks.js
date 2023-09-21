@@ -114,8 +114,13 @@ function help(){
         type "list" to list all the tasks
         type "add" and the task you want to add the task
         type "remove" only to remove the last task
-        type "remove" and the number of the task to remove the task`)
-}
+        type "remove" and the number of the task to remove the task
+        type "remove" and the number of the task to remove the task
+        type "edit" and the task to edit the last task
+        type "edit" and number of task to edit the task
+        type "check" and number of task to check the task
+        type "uncheck" and number of task to uncheck the task`)
+        }
 
 let tasks=[
   {task:"buy bread",done:false},
