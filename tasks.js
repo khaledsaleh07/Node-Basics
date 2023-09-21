@@ -64,12 +64,13 @@ function unknownCommand(c){
  * @returns {void}
  */
 function hello(text_recieved){
-
-  let text= text_recieved.replace('\n',"")
-  text=text.trim();
-  text=text.slice(6,text.length);
-
-  console.log('hello '+text+'!');
+  let text= text_recieved.replace('\n',"").trim();
+  if(text==="hello")
+      {console.log("hello!")}
+  else{
+     text=text.slice(5,text.length).trim();
+     console.log('hello '+text+'!');
+      }
 }
 
 
