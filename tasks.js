@@ -56,6 +56,12 @@ function onDataReceived(text) {
   else if(textCommand[0]+'\n' === 'edit\n'){
     edit(text);
   }
+  else if(textCommand[0]+'\n' === 'check\n'){
+    check(text);
+  }
+  else if(textCommand[0]+'\n' === 'uncheck\n'){
+    uncheck(text);
+  }
   else{
     unknownCommand(text);
   }
@@ -187,5 +193,42 @@ tasks[tasks.length-1]=splited_text;
 console.log(`last task edited succesfully`);
 }
 }
+
+
+/**
+ * check a task
+ *
+ * @returns {void}
+ */
+function check(text){
+  let index=text.slice(5,text.length).trim()-1;
+
+
+  if(index>=tasks.length || index<0){
+    console.log("Error, number of task does not exist")
+  }
+  else{
+tasks[index].done=true;
+console.log(`Task ${index+1} Checked succesfully`)
+
+}}
+
+/**
+ * unCheck a task
+ *
+ * @returns {void}
+ */
+function uncheck(text){
+  let index=text.slice(7,text.length).trim()-1;
+
+
+  if(index>=tasks.length || index<0){
+    console.log("Error, number of task does not exist")
+  }
+  else{
+tasks[index].done=false;
+console.log(`Task ${index+1} unchecked succesfully`)
+
+}}
 // The following line starts the application
 startApp("Khaled Saleh")
