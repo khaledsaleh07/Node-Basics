@@ -98,7 +98,14 @@ function quit(){
 }
 // list all possible commands
 function help(){
-  console.log('help: display list of all commands \nexit or quit: exits the application \nhello: says hello!\n hello and your name to display hello "your name"\ntype')
+  console.log(`type "hello" to say Hello!
+        type "hello" and your name to display hello "your name"
+        type "exit" or "quit" to exit the application
+        type "help" to list all the commands
+        type "list" to list all the tasks
+        type "add" and the task you want to add the task
+        type "remove" only to remove the last task
+        type "remove" and the number of the task to remove the task`)
 }
 
 let tasks=[
