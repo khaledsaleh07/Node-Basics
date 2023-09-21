@@ -53,6 +53,9 @@ function onDataReceived(text) {
   else if(textCommand[0]+'\n' === 'remove\n'){
     remove(text);
   }
+  else if(textCommand[0]+'\n' === 'edit\n'){
+    edit(text);
+  }
   else{
     unknownCommand(text);
   }
@@ -158,6 +161,31 @@ function remove(text){
   tasks.splice(index,1);
   console.log(`Task ${index+1} Removed succesfully`)
 
+}
+
+/**
+ * edit a task
+ *
+ * @returns {void}
+ */
+function edit(text){
+  let text_edit=text.slice(4,text.length).trim();
+  let index=text.trim().split(" ")[1]-1;
+  let splited_text=text.slice(4,text.length).trim();
+  let new_text=text.slice(7,text.length)
+
+    if(text.trim().length==4){
+    console.log("Error, type task you want ");
+  }
+  else if(index>=0){
+tasks[index]=new_text.replace("\n","");
+console.log(`Task ${index+1} edited succesfully`);
+
+}
+else{
+tasks[tasks.length-1]=splited_text;
+console.log(`last task edited succesfully`);
+}
 }
 // The following line starts the application
 startApp("Khaled Saleh")
