@@ -49,7 +49,10 @@ function onDataReceived(text) {
   }
   else if(textCommand[0]+'\n' === 'add\n'){
     add(text);
-     }
+  }
+  else if(textCommand[0]+'\n' === 'remove\n'){
+    remove(text);
+  }
   else{
     unknownCommand(text);
   }
@@ -128,5 +131,24 @@ function add(text){
     tasks.push(text.slice(4,text.length).trim());
   }
 }
+
+
+/**
+ * remove a task
+ *
+ * @returns {void}
+ */
+function remove(text){
+
+  if(text.trim().length==6){
+    tasks.pop();
+    console.log("Last element Removed succesfully")
+  }
+  else{
+    let index=text.slice(6,text.length).trim()-1;
+tasks.splice(index,1);
+console.log(`Task ${index+1} Removed succesfully`)
+
+}}
 // The following line starts the application
 startApp("Khaled Saleh")
