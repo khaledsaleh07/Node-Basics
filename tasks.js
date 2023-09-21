@@ -85,7 +85,7 @@ function quit(){
 }
 // list all possible commands
 function help(){
-  console.log('help: display list of all commands \nexit or quit: exits the application \nhello: says hello!')
+  console.log('help: display list of all commands \nexit or quit: exits the application \nhello: says hello!\n hello and your name to display hello "your name"\ntype')
 }
 
 
